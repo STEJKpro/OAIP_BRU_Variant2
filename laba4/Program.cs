@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+//Задание 2: 2	Даны три числа. Найти наименьшее из них.
 namespace laba4
 {
     internal class Program
@@ -38,6 +38,35 @@ namespace laba4
 
             // Вывод результата
             Console.WriteLine($"Значение функции y при x = {x}: {y}");
+
+
+            //Задание 2:
+            Console.WriteLine("Введите 3 числа");
+            double[] numbers = new double[3];
+            // init array
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                Console.Write($"Введите {i+1} значение: ");
+                numbers[i] = double.Parse(Console.ReadLine());
+            }
+            // Output results
+            Console.WriteLine($"Минимальное значение: {GetMin(numbers)}");
+
+
+        }
+
+
+        static double GetMin(double[] arr)
+        {
+            // function return min value of array
+            double min = arr[0];
+            for (int i = 0; i< arr.Length; i++)
+            {
+                if (min > arr[i]){
+                    min = arr[i];
+                }
+            }
+            return min;
         }
     }
 }
